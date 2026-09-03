@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Diário de Orações Poderosas — 30 Dias</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --gold:    #C9913A;
+    --gold2:   #F0C97A;
+    --cream:   #FDF8F0;
+    --pearl:   #FAF5EC;
+    --brown:   #3B2212;
+    --mocha:   #7A4F2E;
+    --sage:    #6B8F71;
+    --sky:     #7BB8D4;
+    --rose:    #D4848A;
+    --lavender:#9B8EC4;
+    --bg:      #F7F2EA;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--brown);
+    overflow-x: hidden;
+    line-height: 1.7;
+  }
+
+  /* ── HERO ──────────────────────────────────────────── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 24px 80px;
+    position: relative;
+    background: linear-gradient(160deg, #2A1A0E 0%, #3D2214 40%, #1E1008 100%);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,145,58,0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 20% 80%, rgba(107,143,113,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 50% at 80% 70%, rgba(155,142,196,0.10) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  /* Floating orbs */
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.25;
+    animation: float 8s ease-in-out infinite;
+  }
+  .orb-1 { width:300px;height:300px;background:var(--gold);top:-80px;right:-60px;animation-delay:0s; }
+  .orb-2 { width:200px;height:200px;background:var(--lavender);bottom:60px;left:-40px;animation-delay:2s; }
+  .orb-3 { width:160px;height:160px;background:var(--sage);bottom:120px;right:10%;animation-delay:4s; }
+
+  @keyframes float {
+    0%,100% { transform: translateY(0) scale(1); }
+    50%      { transform: translateY(-24px) scale(1.04); }
+  }
+
+  .cross-glow {
+    font-size: 64px;
+    margin-bottom: 18px;
+    animation: glow-pulse 3s ease-in-out infinite;
+    position: relative;
+    z-index: 1;
+  }
+  @keyframes glow-pulse {
+    0%,100% { text-shadow: 0 0 20px rgba(201,145,58,0.4), 0 0 60px rgba(201,145,58,0.2); }
+    50%      { text-shadow: 0 0 40px rgba(201,145,58,0.8), 0 0 100px rgba(201,145,58,0.4); }
+  }
+
+  .hero-tag {
+    display: inline-block;
+    background: rgba(201,145,58,0.18);
+    border: 1px solid rgba(201,145,58,0.4);
+    color: var(--gold2);
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 6px 20px;
+    border-radius: 50px;
+    margin-bottom: 28px;
+    position: relative; z-index: 1;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 8vw, 86px);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.05;
+    margin-bottom: 8px;
+    position: relative; z-index: 1;
+    animation: fadeUp 0.9s ease 0.1s both;
+  }
+  .hero h1 span { color: var(--gold2); }
+
+  .hero-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(18px, 3.5vw, 26px);
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(255,255,255,0.72);
+    margin-bottom: 28px;
+    position: relative; z-index: 1;
+    animation: fadeUp 1s ease 0.2s both;
+  }
+
+  .hero-verse {
+    max-width: 520px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.55);
+    font-style: italic;
+    margin: 0 auto 42px;
+    position: relative; z-index: 1;
+    animation: fadeUp 1s ease 0.3s both;
+    border-left: 2px solid rgba(201,145,58,0.5);
+    padding-left: 16px;
+    text-align: left;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold) 0%, #E8A84A 100%);
+    color: #1A0C00;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    padding: 18px 52px;
+    border-radius: 60px;
+    text-decoration: none;
+    box-shadow: 0 8px 40px rgba(201,145,58,0.45), 0 2px 8px rgba(0,0,0,0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative; z-index: 1;
+    animation: fadeUp 1s ease 0.4s both;
+  }
+  .btn-primary:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 16px 60px rgba(201,145,58,0.6), 0 4px 16px rgba(0,0,0,0.3);
+  }
+  .btn-primary small { display:block; font-size:11px; font-weight:400; opacity:0.75; margin-top:3px; }
+
+  .hero-badges {
+    display: flex; gap: 24px; justify-content: center; flex-wrap: wrap;
+    margin-top: 42px;
+    position: relative; z-index: 1;
+    animation: fadeUp 1s ease 0.5s both;
+  }
+  .badge {
+    display: flex; align-items: center; gap: 8px;
+    color: rgba(255,255,255,0.6); font-size: 13px;
+  }
+  .badge-dot { width:6px;height:6px;border-radius:50%;background:var(--gold2); }
+
+  @keyframes fadeUp {
+    from { opacity:0; transform:translateY(28px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+
+  /* ── SECTIONS BASE ─────────────────────────────────── */
+  section { padding: 90px 24px; }
+  .container { max-width: 960px; margin: 0 auto; }
+  .section-tag {
+    display: inline-block;
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gold); font-weight: 600;
+    margin-bottom: 14px;
+  }
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(30px, 5vw, 52px);
+    font-weight: 700; line-height: 1.15;
+    color: var(--brown); margin-bottom: 18px;
+  }
+  h2 span { color: var(--gold); }
+  .lead {
+    font-size: 16px; color: var(--mocha); max-width: 600px;
+    line-height: 1.8;
+  }
+
+  /* ── PROBLEM STRIP ─────────────────────────────────── */
+  .problem-strip {
+    background: linear-gradient(135deg, #2A1A0E, #3D2214);
+    padding: 70px 24px;
+  }
+  .problem-strip h2 { color: #fff; }
+  .problem-strip .lead { color: rgba(255,255,255,0.65); }
+  .problem-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px; margin-top: 48px;
+  }
+  .prob-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px; padding: 28px 22px;
+    text-align: center;
+    transition: background 0.3s;
+  }
+  .prob-card:hover { background: rgba(255,255,255,0.09); }
+  .prob-card .emoji { font-size: 32px; margin-bottom: 12px; display:block; }
+  .prob-card p { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.6; }
+
+  /* ── WHAT YOU GET ──────────────────────────────────── */
+  .what-section { background: var(--cream); }
+  .features-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px; margin-top: 56px;
+  }
+  .feat-card {
+    background: #fff;
+    border-radius: 20px; padding: 36px 28px;
+    box-shadow: 0 2px 20px rgba(59,34,18,0.06);
+    border: 1px solid rgba(201,145,58,0.12);
+    position: relative; overflow: hidden;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+  .feat-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold2));
+  }
+  .feat-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(59,34,18,0.12); }
+  .feat-icon { font-size: 36px; margin-bottom: 16px; display: block; }
+  .feat-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 700;
+    color: var(--brown); margin-bottom: 10px;
+  }
+  .feat-card p { font-size: 14px; color: var(--mocha); line-height: 1.7; }
+
+  /* ── DAY PREVIEW ───────────────────────────────────── */
+  .preview-section { background: var(--pearl); }
+  .days-scroll {
+    display: flex; gap: 16px; margin-top: 48px;
+    overflow-x: auto; padding-bottom: 16px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .days-scroll::-webkit-scrollbar { height: 4px; }
+  .days-scroll::-webkit-scrollbar-track { background: rgba(201,145,58,0.1); border-radius:4px; }
+  .days-scroll::-webkit-scrollbar-thumb { background: var(--gold); border-radius:4px; }
+
+  .day-card {
+    flex: 0 0 220px; scroll-snap-align: start;
+    background: #fff; border-radius: 18px;
+    padding: 24px 20px;
+    box-shadow: 0 2px 16px rgba(59,34,18,0.07);
+    border: 1px solid rgba(201,145,58,0.12);
+    transition: transform 0.2s;
+  }
+  .day-card:hover { transform: translateY(-3px); }
+  .day-num {
+    font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold); font-weight: 600; margin-bottom: 8px;
+  }
+  .day-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px; font-weight: 700; color: var(--brown);
+    line-height: 1.3; margin-bottom: 10px;
+  }
+  .day-card .day-emoji { font-size: 28px; margin-bottom: 10px; display: block; }
+
+  /* ── THEMES ────────────────────────────────────────── */
+  .themes-section { background: var(--cream); }
+  .themes-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 14px; margin-top: 48px;
+  }
+  .theme-pill {
+    background: #fff;
+    border: 1.5px solid rgba(201,145,58,0.2);
+    border-radius: 50px; padding: 14px 18px;
+    text-align: center; font-size: 13px;
+    color: var(--mocha); font-weight: 500;
+    transition: all 0.2s;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+  }
+  .theme-pill:hover {
+    background: var(--gold); color: #fff;
+    border-color: var(--gold); transform: translateY(-2px);
+  }
+
+  /* ── FOR WHOM ──────────────────────────────────────── */
+  .for-whom { background: linear-gradient(160deg, #1E3028, #2A4035); padding: 80px 24px; }
+  .for-whom h2 { color: #fff; }
+  .for-whom .lead { color: rgba(255,255,255,0.6); }
+  .personas {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px; margin-top: 48px;
+  }
+  .persona {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(107,143,113,0.3);
+    border-radius: 20px; padding: 30px 24px;
+    transition: background 0.3s;
+  }
+  .persona:hover { background: rgba(107,143,113,0.15); }
+  .persona .p-emoji { font-size: 36px; margin-bottom: 14px; display: block; }
+  .persona h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; color: #fff; margin-bottom: 8px;
+  }
+  .persona p { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.7; }
+
+  /* ── TRANSFORMATION ────────────────────────────────── */
+  .transform-section { background: var(--pearl); }
+  .transform-cols {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 0; margin-top: 52px;
+    border-radius: 24px; overflow: hidden;
+    box-shadow: 0 4px 40px rgba(59,34,18,0.10);
+  }
+  .transform-col { padding: 44px 36px; }
+  .transform-col.before {
+    background: #f0ebe2;
+    border-right: 1px solid rgba(201,145,58,0.15);
+  }
+  .transform-col.after { background: linear-gradient(135deg, #2A1A0E, #3D2A18); }
+  .transform-label {
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    font-weight: 600; margin-bottom: 24px;
+  }
+  .transform-col.before .transform-label { color: var(--mocha); }
+  .transform-col.after .transform-label { color: var(--gold2); }
+  .transform-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    margin-bottom: 18px;
+  }
+  .transform-item .ti-emoji { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .transform-item p { font-size: 14px; line-height: 1.6; }
+  .transform-col.before .transform-item p { color: var(--mocha); }
+  .transform-col.after .transform-item p { color: rgba(255,255,255,0.8); }
+
+  @media (max-width: 600px) {
+    .transform-cols { grid-template-columns: 1fr; }
+    .transform-col.before { border-right: none; border-bottom: 1px solid rgba(201,145,58,0.15); }
+  }
+
+  /* ── TESTIMONIALS ──────────────────────────────────── */
+  .testimonials { background: var(--cream); }
+  .testi-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px; margin-top: 52px;
+  }
+  .testi-card {
+    background: #fff; border-radius: 20px; padding: 32px 28px;
+    box-shadow: 0 2px 20px rgba(59,34,18,0.06);
+    border-left: 4px solid;
+    position: relative;
+  }
+  .testi-card:nth-child(1) { border-color: var(--gold); }
+  .testi-card:nth-child(2) { border-color: var(--lavender); }
+  .testi-card:nth-child(3) { border-color: var(--sage); }
+  .testi-card:nth-child(4) { border-color: var(--sky); }
+  .stars { color: var(--gold); font-size: 16px; margin-bottom: 14px; }
+  .testi-card blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; font-style: italic;
+    color: var(--brown); line-height: 1.6; margin-bottom: 20px;
+  }
+  .testi-author { display: flex; align-items: center; gap: 12px; }
+  .avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; flex-shrink: 0;
+  }
+  .av1 { background: #FFF0D4; }
+  .av2 { background: #EDE8F8; }
+  .av3 { background: #E4EFE6; }
+  .av4 { background: #E0F0F8; }
+  .author-name { font-weight: 600; font-size: 14px; color: var(--brown); }
+  .author-role { font-size: 12px; color: var(--mocha); }
+
+  /* ── PRICE ─────────────────────────────────────────── */
+  .price-section {
+    background: linear-gradient(160deg, #2A1A0E 0%, #1E0D04 100%);
+    padding: 100px 24px;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .price-section::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(201,145,58,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .price-section h2 { color: #fff; }
+  .price-card {
+    max-width: 500px; margin: 48px auto 0;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201,145,58,0.3);
+    border-radius: 28px; padding: 50px 44px;
+    position: relative; z-index: 1;
+    backdrop-filter: blur(10px);
+  }
+  .price-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold), var(--gold2));
+    color: #1A0C00; font-size: 11px;
+    font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 18px; border-radius: 50px;
+    margin-bottom: 24px;
+  }
+  .price-old {
+    font-size: 16px; color: rgba(255,255,255,0.4);
+    text-decoration: line-through; margin-bottom: 6px;
+  }
+  .price-main {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 72px; font-weight: 700;
+    color: #fff; line-height: 1;
+    margin-bottom: 6px;
+  }
+  .price-main small {
+    font-size: 28px; vertical-align: super;
+    font-family: 'DM Sans', sans-serif; font-weight: 300;
+  }
+  .price-note { font-size: 13px; color: rgba(255,255,255,0.45); margin-bottom: 36px; }
+  .price-includes { text-align: left; margin-bottom: 36px; }
+  .pi-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.07);
+    font-size: 14px; color: rgba(255,255,255,0.8);
+  }
+  .pi-check { color: var(--gold2); font-size: 16px; }
+  .btn-buy {
+    display: block; width: 100%;
+    background: linear-gradient(135deg, var(--gold) 0%, #E8A840 100%);
+    color: #1A0C00; font-weight: 700; font-size: 18px;
+    padding: 20px 24px; border-radius: 60px; border: none;
+    text-decoration: none; cursor: pointer;
+    box-shadow: 0 8px 40px rgba(201,145,58,0.5);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-buy:hover { transform: translateY(-3px); box-shadow: 0 16px 60px rgba(201,145,58,0.65); }
+  .btn-buy small { display:block;font-size:12px;font-weight:400;opacity:0.7;margin-top:4px; }
+  .guarantee {
+    display: flex; align-items: center; gap: 12px;
+    margin-top: 28px; justify-content: center;
+    color: rgba(255,255,255,0.5); font-size: 13px;
+  }
+  .guarantee .g-emoji { font-size: 24px; }
+
+  /* ── FAQ ───────────────────────────────────────────── */
+  .faq-section { background: var(--pearl); }
+  .faq-list { max-width: 680px; margin: 52px auto 0; }
+  .faq-item {
+    background: #fff; border-radius: 16px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(201,145,58,0.12);
+    overflow: hidden;
+  }
+  .faq-q {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 22px 26px; cursor: pointer;
+    font-weight: 600; font-size: 15px; color: var(--brown);
+    user-select: none;
+  }
+  .faq-q .faq-arrow { font-size: 18px; transition: transform 0.3s; color: var(--gold); }
+  .faq-a {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s;
+    font-size: 14px; color: var(--mocha); line-height: 1.7;
+    padding: 0 26px;
+  }
+  .faq-item.open .faq-a { max-height: 300px; padding: 0 26px 22px; }
+  .faq-item.open .faq-arrow { transform: rotate(180deg); }
+
+  /* ── FINAL CTA ─────────────────────────────────────── */
+  .final-cta {
+    background: linear-gradient(160deg, var(--sage) 0%, #4A7A52 100%);
+    padding: 100px 24px; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .final-cta::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(255,255,255,0.08) 0%, transparent 70%);
+  }
+  .final-cta h2 { color: #fff; position: relative; z-index: 1; }
+  .final-cta .lead { color: rgba(255,255,255,0.75); position: relative; z-index: 1; margin: 0 auto 42px; }
+
+  /* ── FOOTER ────────────────────────────────────────── */
+  footer {
+    background: #140800; padding: 40px 24px;
+    text-align: center; color: rgba(255,255,255,0.3);
+    font-size: 12px; line-height: 2;
+  }
+  footer a { color: rgba(255,255,255,0.4); }
+
+  /* ── STICKY BAR ────────────────────────────────────── */
+  .sticky-bar {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: rgba(42,26,14,0.96);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(201,145,58,0.3);
+    padding: 14px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    z-index: 100; gap: 16px;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+  }
+  .sticky-bar.visible { transform: translateY(0); }
+  .sticky-bar-text { color: #fff; font-size: 14px; font-weight: 500; }
+  .sticky-bar-text small { display: block; font-size: 12px; color: rgba(255,255,255,0.5); font-weight:400; }
+  .btn-sticky {
+    background: linear-gradient(135deg, var(--gold), #E8A840);
+    color: #1A0C00; font-weight: 700; font-size: 14px;
+    padding: 12px 28px; border-radius: 50px;
+    text-decoration: none; white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* ── DIVIDER ───────────────────────────────────────── */
+  .divider {
+    text-align: center; padding: 28px 0;
+    color: var(--gold); font-size: 28px; letter-spacing: 16px;
+    background: var(--cream);
+  }
+
+  @media (max-width: 640px) {
+    .sticky-bar-text { display: none; }
+    .btn-sticky { width: 100%; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- HERO -->
+<!-- ══════════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <div class="hero-tag">✨ Produto Digital Premium</div>
+  <div class="cross-glow">✝️</div>
+
+  <h1>Diário de<br/><span>Orações Poderosas</span></h1>
+  <p class="hero-sub">30 dias para transformar sua vida espiritual</p>
+
+  <p class="hero-verse">
+    "Muito pode, por sua eficácia, a súplica do justo."<br/>
+    <em>— Tiago 5:16b</em>
+  </p>
+
+  <a href="#comprar" class="btn-primary">
+    🙏 Quero Começar Agora
+    <small>Acesso imediato após o pagamento</small>
+  </a>
+
+  <div class="hero-badges">
+    <span class="badge"><span class="badge-dot"></span> 30 dias de conteúdo</span>
+    <span class="badge"><span class="badge-dot"></span> PDF profissional</span>
+    <span class="badge"><span class="badge-dot"></span> Para iniciantes e avançados</span>
+    <span class="badge"><span class="badge-dot"></span> Entrega imediata</span>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- PROBLEM -->
+<!-- ══════════════════════════════════════════════════ -->
+<section class="problem-strip">
+  <div class="container" style="text-align:center">
+    <span class="section-tag" style="color:var(--gold2)">💔 Você já se sentiu assim?</span>
+    <h2>A oração parece difícil e sem resultado?</h2>
+    <p class="lead" style="margin:0 auto">Você não está sozinho. Milhares de cristãos lutam com os mesmos desafios todos os dias.</p>
+
+    <div class="problem-grid">
+      <div class="prob-card">
+        <span class="emoji">😔</span>
+        <p>Sente que suas orações não passam do teto e não chegam a Deus</p>
+      </div>
+      <div class="prob-card">
+        <span class="emoji">🔄</span>
+        <p>Fica repetindo sempre as mesmas palavras sem profundidade</p>
+      </div>
+      <div class="prob-card">
+        <span class="emoji">⏳</span>
+        <p>Não consegue manter consistência e abandona após poucos dias</p>
+      </div>
+      <div class="prob-card">
+        <span class="emoji">❓</span>
+        <p>Não sabe por onde começar ou como estruturar sua oração</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- WHAT IS IT -->
+<!-- ══════════════════════════════════════════════════ -->
+<section class="what-section">
+  <div class="container">
+    <div style="text-align:center; margin-bottom:0">
+      <span class="section-tag">📖 O que é este diário?</span>
+      <h2>Seu guia <span>completo</span> para uma<br/>vida de oração transformadora</h2>
+      <p class="lead" style="margin:0 auto 0">Um produto digital elegante e poderoso com 30 dias de devocionais profundos, versículos, reflexões, orações modelo e espaço para suas anotações pessoais.</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feat-card">
+        <span class="feat-icon">📅</span>
+        <h3>30 Dias Estruturados</h3>
+        <p>Cada dia tem um tema específico com conteúdo profundo. Do fundamento da oração até a entrega total — uma jornada completa.</p>
+      </div>
+      <div class="feat-card">
+        <span class="feat-icon">📜</span>
+        <h3>Versículos Poderosos</h3>
+        <p>Cada dia começa com um versículo bíblico cuidadosamente selecionado para ancorar sua oração na Palavra de Deus.</p>
+      </div>
+      <div class="feat-card">
+        <span class="feat-icon">💭</span>
+        <h3>Reflexões Profundas</h3>
+        <p>Perguntas que tocam no fundo da alma e te ajudam a identificar bloqueios e áreas de crescimento espiritual.</p>
+      </div>
+      <div class="feat-card">
+        <span class="feat-icon">🙏</span>
+        <h3>Orações Modelo</h3>
+        <p>Cada dia inclui uma oração escrita para guiar seus primeiros passos, adaptável às suas próprias palavras.</p>
+      </div>
+      <div class="feat-card">
+        <span class="feat-icon">✏️</span>
+        <h3>Espaço de Anotações</h3>
+        <p>Linhas para registrar o que Deus falou ao seu coração, pedidos de oração e testemunhos ao longo dos 30 dias.</p>
+      </div>
+      <div class="feat-card">
+        <span class="feat-icon">🎨</span>
+        <h3>Design Premium</h3>
+        <p>Um PDF elegante, com tipografia refinada e design espiritual que torna a experiência ainda mais especial.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider">✦ ✦ ✦</div>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- DAY PREVIEW -->
+<!-- ══════════════════════════════════════════════════ -->
+<section class="preview-section">
+  <div class="container">
+    <span class="section-tag">🗓️ Prévia dos dias</span>
+    <h2>Conheça alguns <span>temas</span> que você vai explorar</h2>
+    <p class="lead">Uma jornada cuidadosamente planejada do início ao fim. Cada dia é uma nova dimensão da oração.</p>
+
+    <div class="days-scroll">
+      <div class="day-card"><span class="day-emoji">🏛️</span><div class="day-num">Dia 01</div><h4>O Fundamento da Oração Poderosa</h4></div>
+      <div class="day-card"><span class="day-emoji">🌟</span><div class="day-num">Dia 02</div><h4>Oração com Fé</h4></div>
+      <div class="day-card"><span class="day-emoji">👑</span><div class="day-num">Dia 03</div><h4>A Oração de Adoração</h4></div>
+      <div class="day-card"><span class="day-emoji">🕊️</span><div class="day-num">Dia 04</div><h4>A Oração de Confissão</h4></div>
+      <div class="day-card"><span class="day-emoji">🙌</span><div class="day-num">Dia 05</div><h4>A Oração de Gratidão</h4></div>
+      <div class="day-card"><span class="day-emoji">📖</span><div class="day-num">Dia 06</div><h4>Oração e a Palavra de Deus</h4></div>
+      <div class="day-card"><span class="day-emoji">⚡</span><div class="day-num">Dia 08</div><h4>Oração pelo Espírito Santo</h4></div>
+      <div class="day-card"><span class="day-emoji">👨‍👩‍👧</span><div class="day-num">Dia 09</div><h4>Oração pela Família</h4></div>
+      <div class="day-card"><span class="day-emoji">🛡️</span><div class="day-num">Dia 17</div><h4>Oração Contra as Trevas</h4></div>
+      <div class="day-card"><span class="day-emoji">🌍</span><div class="day-num">Dia 21</div><h4>Oração Pelos Perdidos</h4></div>
+      <div class="day-card"><span class="day-emoji">🔥</span><div class="day-num">Dia 27</div><h4>Oração pelo Avivamento</h4></div>
+      <div class="day-card"><span class="day-emoji">🌅</span><div class="day-num">Dia 30</div><h4>Uma Vida Transformada pela Oração</h4></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- THEMES -->
+<!-- ══════════════════════════════════════════════════ -->
+<section class="themes-section">
+  <div class="container" style="text-align:center">
+    <span class="section-tag">🗺️ Todos os temas</span>
+    <h2>30 dimensões da <span>oração poderosa</span></h2>
+    <p class="lead" style="margin:0 auto">Uma jornada completa pela vida de oração — abrangendo todos os aspectos essenciais.</p>
+
+    <div class="themes-grid">
+      <div class="theme-pill">🏛️ Fundamento</div>
+      <div class="theme-pill">✨ Fé</div>
+      <div class="theme-pill">👑 Adoração</div>
+      <div class="theme-pill">🕊️ Confissão</div>
+      <div class="theme-pill">🙌 Gratidão</div>
+      <div class="theme-pill">📖 A Palavra</div>
+      <div class="theme-pill">💪 Perseverança</div>
+      <div class="theme-pill">🔥 Espírito Santo</div>
+      <div class="theme-pill">👨‍👩‍👧 Família</div>
+      <div class="theme-pill">⛈️ Em Crises</div>
+      <div class="theme-pill">📿 Pai Nosso</div>
+      <div class="theme-pill">🌿 Jejum</div>
+      <div class="theme-pill">🌍 Intercessão</div>
+      <div class="theme-pill">💚 Saúde</div>
+      <div class="theme-pill">💰 Provisão</div>
+      <div class="theme-pill">🗳️ Líderes</div>
+      <div class="theme-pill">🛡️ Contra as Trevas</div>
+      <div class="theme-pill">💛 Perdão</div>
+      <div class="theme-pill">🧠 Sabedoria</div>
+      <div class="theme-pill">☮️ Paz Interior</div>
+      <div class="theme-pill">🌟 Pelos Perdidos</div>
+      <div class="theme-pill">🤫 No Silêncio</div>
+      <div class="theme-pill">🤝 Com Outros</div>
+      <div class="theme-pill">✅ Obediência</div>
+      <div class="theme-pill">🌎 Missões</div>
+      <div class="theme-pill">🔒 Proteção</div>
+      <div class="theme-pill">🔥 Avivamento</div>
+      <div class="theme-pill">🎉 Ação de Graças</div>
+      <div class="theme-pill">🕊️ Entrega Total</div>
+      <div class="theme-pill">🌅 Vida Transformada</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- FOR WHOM -->
+<!-- ══════════════════════════════════════════════════ -->
+<section class="for-whom">
+  <div class="container" style="text-align:center">
+    <span class="section-tag" style="color:var(--gold2)">💚 Para quem é este diário?</span>
+    <h2>Este produto foi feito <span style="color:var(--gold2)">para você</span> se...</h2>
+    <p class="lead" style="margin:0 auto">Não importa onde você está na sua jornada espiritual — há um lugar para você aqui.</p>
+
+    <div class="personas">
+      <div class="persona">
+        <span class="p-emoji">🌱</span>
+        <h4>Você é Iniciante</h4>
+        <p>Acabou de começar sua vida cristã e não sabe como orar de forma profunda e consistente.</p>
+      </div>
+      <div class="persona">
+        <span class="p-emoji">📉</span>
+        <h4>Você Esfriou Espiritualmente</h4>
+        <p>Já orava muito, mas perdeu o fogo e quer reacender a chama da sua vida espiritual.</p>
+      </div>
+      <div class="persona">
+        <span class="p-emoji">🔍</span>
+        <h4>Você Busca Mais Profundidade</h4>
+        <p>Ora há anos, mas sente que suas orações são rasas e deseja ir mais fundo em Deus.</p>
+      </div>
+      <div class="persona">
+        <span class="p-emoji">👨‍👩‍👧‍👦</span>
+        <h4>Você É Líder ou Pai/Mãe</h4>
+        <p>Quer guiar sua família, célula ou ministério a uma vida de oração mais poderosa e transformadora.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- TRANSFORMATION -->
+<!-- ══════════════════════════════════════════════════ -->
+<section class="transform-section">
+  <div class="container">
+    <div style="text-align:center">
+      <span class="section-tag">🔄 A transformação</span>
+      <h2>Do <span>antes</span> para o depois</h2>
+      <p class="lead" style="margin:0 auto">Veja a diferença que 30 dias de oração comprometida pode fazer na sua vida.</p>
+    </div>
+    <div class="transform-cols">
+      <div class="transform-col before">
+        <div class="transform-label">😔 Antes</div>
+        <div class="transform-item"><span class="ti-emoji">❌</span><p>Orações sem direção e sem foco</p></div>
+        <div class="transform-item"><span class="ti-emoji">❌</span><p>Falta de consistência e constância</p></div>
+        <div class="transform-item"><span class="ti-emoji">❌</span><p>Sentimento de distância de Deus</p></div>
+        <div class="transform-item"><span class="ti-emoji">❌</span><p>Ansiedade e dificuldade de confiar</p></div>
+        <div class="transform-item"><span class="ti-emoji">❌</span><p>Não saber orar por outros</p></div>
+        <div class="transform-item"><span class="ti-emoji">❌</span><p>Vida espiritual estagnada</p></div>
+      </div>
+      <div class="transform-col after">
+        <div class="transform-label">🌟 Depois — 30 Dias</div>
+        <div class="transform-item"><span class="ti-emoji">✅</span><p>Orações com profundidade e poder</p></div>
+        <div class="transform-item"><span class="ti-emoji">✅</span><p>Hábito diário de buscar a Deus</p></div>
+        <div class="transform-item"><span class="ti-emoji">✅</span><p>Intimidade real e crescente com Deus</p></div>
+        <div class="transform-item"><span class="ti-emoji">✅</span><p>Paz que excede o entendimento</p></div>
+        <div class="transform-item"><span class="ti-emoji">✅</span><p>Capacidade de interceder com fé</p></div>
+        <div class="transform-item"><span class="ti-emoji">✅</span><p>Vida espiritual vibrante e transformadora</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- TESTIMONIALS -->
+<!-- ══════════════════════════════════════════════════ -->
+<section class="testimonials">
+  <div class="container">
+    <div style="text-align:center">
+      <span class="section-tag">💬 Depoimentos</span>
+      <h2>O que dizem quem já <span>viveu a experiência</span></h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <blockquote>"Este diário mudou completamente minha relação com a oração. Pela primeira vez na vida, senti Deus de verdade respondendo!"</blockquote>
+        <div class="testi-author">
+          <div class="avatar av1">🙏</div>
+          <div><div class="author-name">Mariana S.</div><div class="author-role">Mãe de família — São Paulo, SP</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <blockquote>"Sou cristão há 15 anos, mas foi com este diário que aprendi a orar de verdade. A profundidade de cada dia é incrível."</blockquote>
+        <div class="testi-author">
+          <div class="avatar av2">✝️</div>
+          <div><div class="author-name">Carlos M.</div><div class="author-role">Líder de célula — Belo Horizonte, MG</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <blockquote>"Comecei como iniciante e terminei os 30 dias com uma fé que eu nunca imaginei que era possível ter. Vale cada centavo!"</blockquote>
+        <div class="testi-author">
+          <div class="avatar av3">🌿</div>
+          <div><div class="author-name">Ana L.</div><div class="author-role">Professora — Fortaleza, CE</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <blockquote>"Usei com meu grupo de mulheres na igreja. Foi um avivamento. Todas oramos juntas pelos 30 dias e não paramos mais!"</blockquote>
+        <div class="testi-author">
+          <div class="avatar av4">👑</div>
+          <div><div class="author-name">Fernanda R.</div><div class="author-role">Pastora — Curitiba, PR</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider" style="background:var(--pearl)">✦ ✦ ✦</div>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- PRICE -->
+<!-- ══════════════════════════════════════════════════ -->
+<section class="price-section" id="comprar">
+  <div class="container" style="text-align:center; position:relative; z-index:1">
+    <span class="section-tag" style="color:var(--gold2)">💎 Investimento</span>
+    <h2 style="color:#fff">Transforme sua vida espiritual<br/><span style="color:var(--gold2)">por um preço acessível</span></h2>
+
+    <div class="price-card">
+      <div class="price-badge">🎁 Oferta de Lançamento</div>
+      <div class="price-old">De R$ 47,00</div>
+      <div class="price-main"><small>R$</small>27</div>
+      <div class="price-note">Pagamento único — acesso vitalício</div>
+
+      <div class="price-includes">
+        <div class="pi-item"><span class="pi-check">✨</span> PDF completo com 30 dias de conteúdo</div>
+        <div class="pi-item"><span class="pi-check">✨</span> 30 versículos bíblicos aprofundados</div>
+        <div class="pi-item"><span class="pi-check">✨</span> 30 devocionais originais e exclusivos</div>
+        <div class="pi-item"><span class="pi-check">✨</span> 30 orações modelo prontas para usar</div>
+        <div class="pi-item"><span class="pi-check">✨</span> Espaço de anotações em cada dia</div>
+        <div class="pi-item"><span class="pi-check">✨</span> Design elegante e profissional</div>
+        <div class="pi-item"><span class="pi-check">✨</span> Entrega imediata no e-mail</div>
+      </div>
+
+      <a href="#" class="btn-buy">
+        🙏 Quero Começar Minha Transformação
+        <small>Clique e seja redirecionado para o pagamento seguro</small>
+      </a>
+
+      <div class="guarantee">
+        <span class="g-emoji">🔒</span>
+        <span>Pagamento 100% seguro via Kiwify · Entrega instantânea</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- FAQ -->
+<!-- ══════════════════════════════════════════════════ -->
+<section class="faq-section">
+  <div class="container" style="text-align:center">
+    <span class="section-tag">❓ Dúvidas frequentes</span>
+    <h2>Perguntas <span>respondidas</span></h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q">📱 Como vou receber o produto? <span class="faq-arrow">⌄</span></div>
+      <div class="faq-a">Após confirmar seu pagamento pela Kiwify, você receberá automaticamente um e-mail com o link para baixar o PDF. O acesso é imediato — 24 horas por dia, 7 dias por semana.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">🖨️ Posso imprimir o diário? <span class="faq-arrow">⌄</span></div>
+      <div class="faq-a">Sim! O PDF foi criado para ser impresso em folha A4 ou usado diretamente no celular, tablet ou computador. Você escolhe o que é mais confortável para você.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">🌱 Precisa ter experiência em oração? <span class="faq-arrow">⌄</span></div>
+      <div class="faq-a">De forma alguma! O diário foi pensado especialmente para iniciantes, mas é profundo o suficiente para cristãos experientes se beneficiarem muito também. Cada dia começa do zero com introduções claras.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">⏱️ Quanto tempo leva cada dia? <span class="faq-arrow">⌄</span></div>
+      <div class="faq-a">Você pode dedicar de 10 a 30 minutos por dia, dependendo do tempo que tem disponível. O devocional é compacto, mas rico — o tempo de oração pessoal é definido por você.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">💳 O pagamento é seguro? <span class="faq-arrow">⌄</span></div>
+      <div class="faq-a">Sim! A Kiwify é uma das plataformas de pagamento mais confiáveis do Brasil, com certificação SSL e proteção total dos seus dados. Você pode pagar via cartão de crédito, PIX ou boleto.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">🔁 Tenho garantia de reembolso? <span class="faq-arrow">⌄</span></div>
+      <div class="faq-a">Sim! Você tem 7 dias de garantia completa. Se por qualquer motivo o produto não atender às suas expectativas, basta solicitar o reembolso e devolveremos seu dinheiro integralmente — sem perguntas.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- FINAL CTA -->
+<!-- ══════════════════════════════════════════════════ -->
+<section class="final-cta">
+  <div class="container">
+    <div style="font-size:56px;margin-bottom:20px;position:relative;z-index:1">🙏</div>
+    <h2>O céu está esperando<br/>pela sua oração</h2>
+    <p class="lead">Não adie mais. Cada dia sem uma vida de oração poderosa é um dia de bênçãos que ficam para trás. Comece hoje — Deus está te esperando.</p>
+    <a href="#comprar" class="btn-primary" style="position:relative;z-index:1">
+      ✨ Quero Transformar Minha Vida Espiritual
+      <small>30 dias · Entrega imediata · Garantia de 7 dias</small>
+    </a>
+    <p style="color:rgba(255,255,255,0.5);font-size:13px;margin-top:24px;position:relative;z-index:1">
+      "Clama a mim, e eu te responderei." — Jeremias 33:3
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- FOOTER -->
+<!-- ══════════════════════════════════════════════════ -->
+<footer>
+  <p>✝️ <strong style="color:rgba(255,255,255,0.6)">Diário de Orações Poderosas</strong> — 30 Dias</p>
+  <p>Produto Digital · Todos os direitos reservados</p>
+  <p style="margin-top:12px">
+    <a href="#">Política de Privacidade</a> &nbsp;·&nbsp;
+    <a href="#">Termos de Uso</a> &nbsp;·&nbsp;
+    <a href="#">Suporte</a>
+  </p>
+  <p style="margin-top:16px;font-size:11px">Este produto é vendido pela plataforma Kiwify · Pagamento 100% seguro 🔒</p>
+</footer>
+
+<!-- STICKY BAR -->
+<div class="sticky-bar" id="stickyBar">
+  <div class="sticky-bar-text">
+    🙏 Diário de Orações Poderosas
+    <small>30 dias · Oferta por R$ 27,00</small>
+  </div>
+  <a href="#comprar" class="btn-sticky">✨ Comprar Agora</a>
+</div>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // Sticky bar
+  const bar = document.getElementById('stickyBar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) bar.classList.add('visible');
+    else bar.classList.remove('visible');
+  });
+
+  // Fade-in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.feat-card, .day-card, .prob-card, .persona, .testi-card, .theme-pill, .transform-col').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
